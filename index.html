@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartHub Online Sync</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SmartHub Online Sync</p>
+        <h1>sH_2026-olSync_0726t12</h1>
+      </div>
+      <div class="status" id="payloadStatus">locked</div>
+    </header>
+
+    <section class="unlock" id="unlockPanel">
+      <div>
+        <h2>Desbloquear registros</h2>
+        <p>Los datos reales están cifrados. La passphrase no se sube a GitHub.</p>
+      </div>
+      <div class="unlock-row">
+        <input id="passphraseInput" type="password" autocomplete="current-password" placeholder="Passphrase local">
+        <button id="unlockButton">Abrir</button>
+      </div>
+      <p class="hint" id="unlockHint">Carga el payload cifrado desde <code>data/smarthub.enc.json</code>.</p>
+    </section>
+
+    <section class="dashboard hidden" id="appPanel">
+      <nav class="tabs" id="tabs">
+        <button data-view="overview" class="active">Resumen</button>
+        <button data-view="orders">Pedidos</button>
+        <button data-view="breaks">Breaks</button>
+        <button data-view="resources">Recursos</button>
+        <button data-view="scripts">Scripts</button>
+        <button data-view="notes">Notas</button>
+        <button data-view="raw">Raw</button>
+      </nav>
+      <section id="view"></section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
